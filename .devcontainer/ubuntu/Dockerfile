@@ -96,10 +96,10 @@ RUN set -x \
 RUN set -x \
     && gem install solargraph
 
-# node18 install
+# node16 install
 RUN set -x \
     && apt-get -y update \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y --no-install-recommends \
     nodejs \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
