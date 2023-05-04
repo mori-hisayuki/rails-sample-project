@@ -88,6 +88,10 @@ RUN set -x \
     && chown -R ${USER_NAME}:${GROUP_NAME} /home/${USER_NAME}/.rbenv
 ENV PATH="/home/${USER_NAME}/.rbenv/bin:$PATH"
 
+# rails install
+RUN set -x \
+    && gem install rails
+
 # node18 install
 RUN set -x \
     && apt-get -y update \
