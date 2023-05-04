@@ -19,7 +19,7 @@
         // コードジャンプ出来るように修正
         "ruby.intellisense": "rubyLocate"
       },
-      // remotecontainer内でのextension
+      // remote container内でのextension
       "extensions": [
         "vscodevim.vim",                          // Vim
         "pkief.material-icon-theme",              // Material Icon Thema
@@ -28,15 +28,14 @@
         "EditorConfig.EditorConfig",              // EditorConfig for VS Code
         "eamodio.gitlens",                        // GitLens — Git supercharged
         "mhutchie.git-graph",                     // Git Graph
-        "github.copilot",                         // GitHub Copilot
         "vector-of-bool.gitflow",                 // gitflow
         "ionutvmi.path-autocomplete",             // Path Autocomplete
         "christian-kohler.path-intellisense",     // Path Intellisense
         "streetsidesoftware.code-spell-checker",  // Code Spell Checker
         "rangav.vscode-thunder-client",           // Thunder Client
         "rebornix.ruby",                          // Ruby
-        "kaiwood.endwise",                        // endwise
-      ],
+        "kaiwood.endwise"                         // endwise
+      ]
     }
   },
   "remoteUser": "vscode",
