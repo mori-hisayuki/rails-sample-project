@@ -88,9 +88,9 @@ RUN set -x \
     && chown -R ${USER_NAME}:${GROUP_NAME} /home/${USER_NAME}/.rbenv
 ENV PATH="/home/${USER_NAME}/.rbenv/bin:$PATH"
 
-# rails install
+# rails 6.1 install
 RUN set -x \
-    && gem install rails
+    && gem install -v 6.1.7 rails
 
 # node18 install
 RUN set -x \
