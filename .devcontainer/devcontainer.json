@@ -16,6 +16,8 @@
         "ruby.useLanguageServer": true,
         // `Format Document`で使用するフォーマッターにrubocopを指定
         "ruby.format": "rubocop",
+        // コードジャンプ出来るように修正
+        "ruby.intellisense": "rubyLocate"
       },
       // remotecontainer内でのextension
       "extensions": [
