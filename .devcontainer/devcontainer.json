@@ -5,6 +5,16 @@
   "service": "rails_service",
   // workspaceを明示的に指定
   "workspaceFolder": "/home/vscode/develop",
+  // VS Codeの設定
+  "settings": {
+    "editor.formatOnSave": true,
+    // 行末技の空白の自動削除を無効(editorconfigにやらせるため)
+    "files.trimTrailingWhitespace": false,
+    // 基本的な言語機能のサポート
+    "ruby.useLanguageServer": true,
+    // `Format Document`で使用するフォーマッターにrubocopを指定
+    "ruby.format": "rubocop",
+  },
   // remotecontainer内でのextension
   "extensions": [
     "vscodevim.vim",                          // Vim
@@ -20,6 +30,8 @@
     "christian-kohler.path-intellisense",     // Path Intellisense
     "streetsidesoftware.code-spell-checker",  // Code Spell Checker
     "rangav.vscode-thunder-client",           // Thunder Client
+    "rebornix.ruby",                          // Ruby
+    "kaiwood.endwise",                        // endwise
   ],
   "remoteUser": "vscode"
 }

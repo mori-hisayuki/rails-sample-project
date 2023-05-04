@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-
 gem "rails", "~> 6.1"
+
+group :development do
+  gem "rubocop", "~> 1.50"
+end
