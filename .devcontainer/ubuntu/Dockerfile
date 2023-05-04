@@ -32,7 +32,7 @@ RUN set -x \
     && groupadd --gid ${GROUP_ID} ${GROUP_NAME}
 
 # create user
-RUN set - x \
+RUN set -x \
     && echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/${USER_NAME} \
     && chmod 0440 /etc/sudoers.d/${USER_NAME} \
     && useradd \
@@ -47,7 +47,7 @@ RUN set - x \
 # https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
 RUN set -x \
     && mkdir -p /home/${USER_NAME}/.vscode-server/extensions \
-    && chown -R vscode:vscode /home/${USER_NAME}/.vscode-server
+    && chown -R ${USER_NAME}:${GROUP_NAME} /home/${USER_NAME}/.vscode-server
 
 # common tools install
 # software-properties-common: add-apt-repository
@@ -73,6 +73,7 @@ RUN set -x \
     libreadline-dev \
     zlib1g-dev \
     libyaml-dev \
+    shared-mime-info \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # ruby-build install
@@ -83,11 +84,9 @@ RUN set -x \
 
 # ruby 3.2.2 install
 RUN set -x \
-    && ruby-build 3.2.2 /usr/local
-
-# rails 6.0.0 install
-RUN set -x \
-    && gem install rails -v "6.0.0"
+    && ruby-build 3.2.2 /home/${USER_NAME}/.rbenv \
+    && chown -R ${USER_NAME}:${GROUP_NAME} /home/${USER_NAME}/.rbenv
+ENV PATH="/home/${USER_NAME}/.rbenv/bin:$PATH"
 
 # node18 install
 RUN set -x \
