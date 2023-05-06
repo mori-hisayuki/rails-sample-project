@@ -1,20 +1,22 @@
 class HelloController < ApplicationController
+  # CSRF対策を無視するための記述
+  protect_from_forgery
 
   def index
-    if params['msg'] != nil then
-      msg = 'Hello, ' + params['msg'] + '!'
+    if request.post? then
+      @title = 'Request'
+      @msg = 'you typed: ' + params['input1'] + '.'
+      @value = params['input1']
     else
-      msg = 'this is sample page.'
+      @title = 'Index'
+      @msg = 'type text...'
+      @value = ''
     end
-    msg = '
-      <html>
-        <body>
-          <h1>Sample Page</h1>
-          <p> '+ msg +' </p>
-        </body>
-      </html>
-    '
-    render html: msg.html_safe
+  end
+
+
+  def other
+    redirect_to action: :index, params: { 'msg': 'from other page'}
   end
 
 end
