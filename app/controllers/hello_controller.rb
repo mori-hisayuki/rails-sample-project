@@ -1,12 +1,17 @@
 class HelloController < ApplicationController
+  # CSRF対策を無視するための記述
+  protect_from_forgery
 
   def index
-    if params['msg'] != nil then
-      @title = params['msg']
+    if request.post? then
+      @title = 'Request'
+      @msg = 'you typed: ' + params['input1'] + '.'
+      @value = params['input1']
     else
       @title = 'Index'
+      @msg = 'type text...'
+      @value = ''
     end
-    @msg = 'this is redirect sample...'
   end
 
 
