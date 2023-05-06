@@ -39,6 +39,18 @@
       ]
     }
   },
+  "features": {
+    //https://containers.dev/features
+    // AWS CLI (aws-cli)
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    // Docker (Docker-in-Docker)
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  },
   "remoteUser": "vscode",
   // Dev Container 作成時に実行するコマンド
   "postCreateCommand": "sh .devcontainer/postCreate.sh"
