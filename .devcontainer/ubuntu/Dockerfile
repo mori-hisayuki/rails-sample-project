@@ -92,10 +92,14 @@ ENV PATH="/home/${USER_NAME}/.rbenv/bin:$PATH"
 RUN set -x \
     && gem install -v 6.1.7 rails
 
-# node18 install
+# solargraph install
+RUN set -x \
+    && gem install solargraph
+
+# node16 install
 RUN set -x \
     && apt-get -y update \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y --no-install-recommends \
     nodejs \
     && apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*

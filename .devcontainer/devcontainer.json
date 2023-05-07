@@ -34,8 +34,22 @@
         "streetsidesoftware.code-spell-checker",  // Code Spell Checker
         "rangav.vscode-thunder-client",           // Thunder Client
         "rebornix.ruby",                          // Ruby
+        "bung87.rails",                           // Rails
+        "castwide.solargraph",                    // vscode-solargraph
         "kaiwood.endwise"                         // endwise
       ]
+    }
+  },
+  "features": {
+    //https://containers.dev/features
+    // AWS CLI (aws-cli)
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    // Docker (Docker-in-Docker)
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
     }
   },
   "remoteUser": "vscode",

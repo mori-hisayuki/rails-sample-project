@@ -24,4 +24,6 @@ services:
       - ..:$HOME_DIR/$WORK_DIR:cached
       - ~/.ssh:$HOME_DIR/.ssh
       - .extensions:$HOME_DIR/.vscode-server/extensions
+      # yarnのキャッシュでディスクオーバーになるのでキャッシュだけ退避
+      - .cache:$HOME_DIR/.cache
     command: sleep infinity
