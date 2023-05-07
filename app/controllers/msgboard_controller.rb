@@ -1,0 +1,2 @@
+class MsgboardController < ApplicationController
+end
