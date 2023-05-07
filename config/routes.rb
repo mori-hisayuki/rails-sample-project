@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   post 'hello', to: 'hello#index'
 
   get 'hello/other'
+
+  # msgboard
+  get 'msgboard', to: 'msgboard#index'
+  post 'msgboard', to: 'msgboard#index'
+  get 'msgboard/index'
+  post 'msgboard/index'
 end
