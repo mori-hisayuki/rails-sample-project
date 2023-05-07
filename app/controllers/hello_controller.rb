@@ -1,22 +1,10 @@
 class HelloController < ApplicationController
-  # CSRF対策を無視するための記述
-  protect_from_forgery
 
   def index
-    if request.post? then
-      @title = 'Request'
-      @msg = 'you typed: ' + params['input1'] + '.'
-      @value = params['input1']
-    else
-      @title = 'Index'
-      @msg = 'type text...'
-      @value = ''
-    end
-  end
-
-
-  def other
-    redirect_to action: :index, params: { 'msg': 'from other page'}
+    @header = 'layout sample'
+    @footer = 'copyright SYODA-Tuyano 2020'
+    @title = 'New Layout'
+    @msg = 'this is sample page!'
   end
 
 end
