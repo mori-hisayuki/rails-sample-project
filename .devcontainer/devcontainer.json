@@ -21,17 +21,10 @@
       },
       // remote container内でのextension
       "extensions": [
-        "vscodevim.vim",                          // Vim
-        "pkief.material-icon-theme",              // Material Icon Thema
         "formulahendry.auto-rename-tag",          // Auto Rename Tag
-        "oderwat.indent-rainbow",                 // indent-rainbow
         "EditorConfig.EditorConfig",              // EditorConfig for VS Code
-        "eamodio.gitlens",                        // GitLens — Git supercharged
-        "mhutchie.git-graph",                     // Git Graph
-        "vector-of-bool.gitflow",                 // gitflow
         "ionutvmi.path-autocomplete",             // Path Autocomplete
         "christian-kohler.path-intellisense",     // Path Intellisense
-        "streetsidesoftware.code-spell-checker",  // Code Spell Checker
         "rangav.vscode-thunder-client",           // Thunder Client
         "rebornix.ruby",                          // Ruby
         "bung87.rails",                           // Rails
